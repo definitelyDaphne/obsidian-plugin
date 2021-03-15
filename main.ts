@@ -10,13 +10,14 @@ const DEFAULT_SETTINGS: MyPluginSettings = {
 
 export default class MyPlugin extends Plugin {
 	settings: MyPluginSettings;
-
+	
 	async onload() {
 		console.log('loading plugin');
 
 		await this.loadSettings();
 
-		this.addRibbonIcon('dice', 'Sample Plugin', () => {
+		// icon sets list https://github.com/obsidianmd/obsidian-api/issues/3
+		this.addRibbonIcon('calendar-with-checkmark', 'Open Timeline View', () => {
 			new Notice('This is a notice!');
 		});
 
